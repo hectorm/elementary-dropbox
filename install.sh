@@ -50,14 +50,14 @@ function prerequisites {
 
 function downloadDropbox {
     infoMsg "Downloading package..."
-    
+
     if [ $(uname -m) == 'x86_64' ]; then
         ARCH=x86_64
     else
         ARCH=x86
     fi
-    
-    wget -O - "https://www.dropbox.com/download?plat=lnx.$ARCH" | tar xzf - -C $HOME
+
+    wget -O - "https://www.dropbox.com/download?plat=lnx.$ARCH" --no-check-certificate | tar xzf - -C $HOME
 }
 
 function createAutostart {
