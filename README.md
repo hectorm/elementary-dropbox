@@ -1,16 +1,17 @@
-<img align="right" src="http://i.imgur.com/hw3iHKK.png">
 # Dropbox for Elementary OS
 This script, designed for **Elementary OS Freya**, installs the latest version of Dropbox and integrates it with WingPanel.
 
+![System tray icon preview](http://i.imgur.com/hw3iHKK.png)
+
 ## Installation
-### Before you install
+#### Before you install
 You need to uninstall any previous version of Dropbox on your system (Software Center, apt-get...).
 
-### Install
+#### Install
 	git clone https://github.com/zant95/elementary-dropbox /tmp/elementary-dropbox
 	bash /tmp/elementary-dropbox/install.sh
 
-### Uninstall
+#### Uninstall
 	git clone https://github.com/zant95/elementary-dropbox /tmp/elementary-dropbox
 	bash /tmp/elementary-dropbox/uninstall.sh
 
