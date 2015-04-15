@@ -78,6 +78,23 @@ Exec=env XDG_CURRENT_DESKTOP=Unity $HOME/.dropbox-dist/dropboxd
 EOF
 }
 
+function createDesktopfile {
+    infoMsg "Creating desktop file..."
+    cat > /usr/share/applications/dropbox.desktop <<EOF
+[Desktop Entry]
+Name=Dropbox
+GenericName=File Synchronizer
+Comment=Sync your files across computers and to the web
+Terminal=false
+Type=Application
+Icon=dropbox
+Categories=Network;FileTransfer;
+StartupNotify=false
+X-GNOME-Autostart-enabled=true
+Exec=env XDG_CURRENT_DESKTOP=Unity $HOME/.dropbox-dist/dropboxd
+EOF
+}
+
 function installIcons {
     if promptMsg "Do you want to install the custom icons?"; then
         mkdir -p $HOME/.local/share/icons/hicolor
@@ -98,6 +115,7 @@ function runDropbox {
 prerequisites
 downloadDropbox
 createAutostart
+createDesktopfile
 installIcons
 runDropbox
 
