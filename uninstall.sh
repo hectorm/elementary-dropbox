@@ -35,7 +35,10 @@ function uninstallDropbox {
             killall dropbox
         fi
 
-        rm -rf $HOME/.dropbox-dist $HOME/.config/autostart/dropbox.desktop
+        rm -rf \
+            $HOME/.dropbox-dist \
+            $HOME/.local/share/applications/dropbox.desktop \
+            $HOME/.config/autostart/dropbox.desktop
 
         if [ -d $HOME/.dropbox ]; then
             rm -rf $HOME/.dropbox.bak
@@ -46,7 +49,9 @@ function uninstallDropbox {
 
 function uninstallIcons {
     if promptMsg "Do you want to uninstall the custom icons?"; then
-        rm -rf $HOME/.local/share/icons/hicolor/*x*/apps/dropboxstatus-*.*
+        rm -rf \
+            $HOME/.local/share/icons/hicolor/*x*/apps/dropbox.* \
+            $HOME/.local/share/icons/hicolor/*x*/apps/dropboxstatus-{busy,busy2,idle,logo,x}.*
     fi
 }
 

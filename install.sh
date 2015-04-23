@@ -3,6 +3,12 @@
 #  Héctor Molinero Fernández <me@znt.se>.
 #
 
+#############################################
+# Globals:                                  #
+#############################################
+
+SCRIPTDIR=$(dirname $0)
+
 # Exit on errors:
 set -e
 
@@ -60,29 +66,37 @@ function downloadDropbox {
     wget -O - "https://www.dropbox.com/download?plat=lnx.$ARCH" --no-check-certificate | tar xzf - -C $HOME
 }
 
-function createAutostart {
-    infoMsg "Creating autostart launcher..."
-    mkdir -p $HOME/.config/autostart
-    cat > $HOME/.config/autostart/dropbox.desktop <<EOF
-[Desktop Entry]
-Name=Dropbox
-GenericName=File Synchronizer
-Comment=Sync your files across computers and to the web
-Terminal=false
-Type=Application
-Icon=dropbox
-Categories=Network;FileTransfer;
-StartupNotify=false
-X-GNOME-Autostart-enabled=true
-Exec=env XDG_CURRENT_DESKTOP=Unity $HOME/.dropbox-dist/dropboxd
-EOF
-}
-
 function installIcons {
     if promptMsg "Do you want to install the custom icons?"; then
         mkdir -p $HOME/.local/share/icons/hicolor
-        cp -rT $( cd "$(dirname "${BASH_SOURCE[0]}")" && pwd )/icons $HOME/.local/share/icons/hicolor
+        cp -rT $SCRIPTDIR/icons $HOME/.local/share/icons/hicolor
     fi
+}
+
+function createLaunchers {
+    cat > $SCRIPTDIR/dropbox.desktop <<-EOF
+
+	[Desktop Entry]
+	Name=Dropbox
+	GenericName=File Synchronizer
+	Comment=Sync your files across computers and to the web
+	Terminal=false
+	Type=Application
+	Icon=dropbox
+	Categories=Network;FileTransfer;
+	StartupNotify=false
+	X-GNOME-Autostart-enabled=true
+	Exec=env XDG_CURRENT_DESKTOP=Unity $HOME/.dropbox-dist/dropboxd
+
+	EOF
+
+    infoMsg "Creating menu launcher..."
+    mkdir -p $HOME/.local/share/applications
+    cp $SCRIPTDIR/dropbox.desktop $HOME/.local/share/applications/
+
+    infoMsg "Creating autostart launcher..."
+    mkdir -p $HOME/.config/autostart
+    cp $SCRIPTDIR/dropbox.desktop $HOME/.config/autostart/
 }
 
 function runDropbox {
@@ -97,8 +111,8 @@ function runDropbox {
 
 prerequisites
 downloadDropbox
-createAutostart
 installIcons
+createLaunchers
 runDropbox
 
 infoMsg "Operation complete!"

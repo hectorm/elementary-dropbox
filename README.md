@@ -5,7 +5,7 @@ This script, designed for **Elementary OS Freya**, installs the latest version o
 
 ## Installation
 #### Before you install
-You need to uninstall any previous version of Dropbox on your system (Software Center, apt-get...).
+You need to install git and uninstall any previous version of Dropbox on your system (Software Center, apt-get...).
 
 #### Install
 	git clone https://github.com/zant95/elementary-dropbox /tmp/elementary-dropbox
@@ -19,5 +19,5 @@ You need to uninstall any previous version of Dropbox on your system (Software C
 This script itself doesn't handle updates. Dropbox will auto-update when a new version is available.
 
 ## Credits
-The icons were extracted from ubuntu-themes. You can find the [originals here](https://launchpad.net/ubuntu-themes).
-
+* Taskbar icons: [ubuntu-themes](https://launchpad.net/ubuntu-themes)
+* Launcher icons: [official Dropbox installer](https://linux.dropbox.com/packages)
