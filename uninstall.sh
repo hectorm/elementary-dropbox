@@ -6,16 +6,15 @@
 # Exit on errors:
 set -e
 
-#############################################
-# Messages:									#
-#############################################
+# Messages:
+##############################
 
 function infoMsg {
-	echo -e "\e[1;33m + \e[1;32m$1 \e[0m"
+	echo -e "\e[1;33m + \e[0;32m$1 \e[0m"
 }
 
 function promptMsg {
-	echo -en "\e[1;33m + \e[1;32m$1 \e[0m"
+	echo -en "\e[1;33m + \e[0;32m$1 \e[0m"
 	read -p "[y/N]: " USER_RESPONSE
 
 	if [[ $USER_RESPONSE =~ ^[Yy]$ ]]; then
@@ -25,9 +24,8 @@ function promptMsg {
 	fi
 }
 
-#############################################
-# Actions:									#
-#############################################
+# Actions:
+##############################
 
 function uninstallDropbox {
 	if promptMsg "Do you want to uninstall Dropbox?"; then
@@ -35,7 +33,10 @@ function uninstallDropbox {
 			killall dropbox
 		fi
 
+		sed -i '/PATH="\$HOME\/\.dropbox-bin:\$PATH"/d' $HOME/.profile
+
 		rm -rf \
+			$HOME/.dropbox-bin \
 			$HOME/.dropbox-dist \
 			$HOME/.local/share/applications/dropbox.desktop \
 			$HOME/.config/autostart/dropbox.desktop
@@ -55,9 +56,8 @@ function uninstallIcons {
 	fi
 }
 
-#############################################
-# Process:									#
-#############################################
+# Process:
+##############################
 
 uninstallDropbox
 uninstallIcons
