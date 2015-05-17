@@ -3,63 +3,48 @@
 #  Héctor Molinero Fernández <me@znt.se>.
 #
 
+# Globals:
+##############################
+
 # Exit on errors:
 set -e
 
-# Messages:
-##############################
+# Get script directory:
+SCRIPTDIR=$(dirname $0)
 
-function infoMsg {
-	echo -e "\e[1;33m + \e[0;32m$1 \e[0m"
-}
-
-function promptMsg {
-	echo -en "\e[1;33m + \e[0;32m$1 \e[0m"
-	read -p "[y/N]: " USER_RESPONSE
-
-	if [[ $USER_RESPONSE =~ ^[Yy]$ ]]; then
-		return 0
-	else
-		return 1
-	fi
-}
+# Load common methods:
+source $SCRIPTDIR/common.sh
 
 # Actions:
 ##############################
 
 function uninstallDropbox {
-	if promptMsg "Do you want to uninstall Dropbox?"; then
-		if [ "$(pidof dropbox)" ]; then
-			killall dropbox
-		fi
-
-		sed -i '/PATH="\$HOME\/\.dropbox-bin:\$PATH"/d' $HOME/.profile
-
-		rm -rf \
-			$HOME/.dropbox-bin \
-			$HOME/.dropbox-dist \
-			$HOME/.local/share/applications/dropbox.desktop \
-			$HOME/.config/autostart/dropbox.desktop
-
-		if [ -d $HOME/.dropbox ]; then
-			rm -rf $HOME/.dropbox.bak
-			mv $HOME/.dropbox $HOME/.dropbox.bak
-		fi
+	if [ "$(pidof dropbox)" ]; then
+		killall dropbox
 	fi
-}
 
-function uninstallIcons {
-	if promptMsg "Do you want to uninstall the custom icons?"; then
-		rm -rf \
-			$HOME/.local/share/icons/hicolor/*x*/apps/dropbox.* \
-			$HOME/.local/share/icons/hicolor/*x*/apps/dropboxstatus-{busy,busy2,idle,logo,x}.*
+	sed -i '/PATH="\$HOME\/\.dropbox-bin:\$PATH"/d' $HOME/.profile
+
+	rm -rf \
+		$HOME/.dropbox-bin \
+		$HOME/.dropbox-dist \
+		$HOME/.local/share/applications/dropbox.desktop \
+		$HOME/.config/autostart/dropbox.desktop \
+		$HOME/.local/share/icons/hicolor/*x*/apps/dropbox.* \
+		$HOME/.local/share/icons/hicolor/*x*/apps/dropboxstatus-{busy,busy2,idle,logo,x}.*
+
+	if [ -d $HOME/.dropbox ]; then
+		mv $HOME/.dropbox $HOME/.dropbox.$(date +%s).bak
 	fi
 }
 
 # Process:
 ##############################
 
-uninstallDropbox
-uninstallIcons
+if promptMsg "Do you want to uninstall Dropbox?"; then
+	uninstallDropbox
 
-infoMsg "Operation complete!"
+	printInfo "Uninstallation complete!"
+else
+	printError "Uninstallation aborted!"
+fi

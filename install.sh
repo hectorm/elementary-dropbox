@@ -3,58 +3,23 @@
 #  Héctor Molinero Fernández <me@znt.se>.
 #
 
-# Exit on errors:
-set -e
-
 # Globals:
 ##############################
 
+# Exit on errors:
+set -e
+
+# Get script directory:
 SCRIPTDIR=$(dirname $0)
 
-# Messages:
-##############################
-
-function infoMsg {
-	echo -e "\e[1;33m + \e[0;32m$1 \e[0m"
-}
-
-function promptMsg {
-	echo -en "\e[1;33m + \e[0;32m$1 \e[0m"
-	read -p "[y/N]: " USER_RESPONSE
-
-	if [[ $USER_RESPONSE =~ ^[Yy]$ ]]; then
-		return 0
-	else
-		return 1
-	fi
-}
+# Load common methods:
+source $SCRIPTDIR/common.sh
 
 # Actions:
 ##############################
 
-function prerequisites {
-	if [ -d $HOME/.dropbox-dist ]; then
-		if promptMsg "This script has found a previous Dropbox installation. Do you want to continue?"; then
-			if [ "$(pidof dropbox)" ]; then
-				killall -9 dropbox
-			fi
-
-			rm -rf $HOME/.dropbox-dist
-		else
-			exit 0
-		fi
-	fi
-
-	if [ -d $HOME/.dropbox ]; then
-		rm -rf $HOME/.dropbox.bak
-		mv $HOME/.dropbox $HOME/.dropbox.bak
-	fi
-
-	mkdir -p $HOME/.dropbox-bin
-}
-
 function downloadDropbox {
-	infoMsg "Downloading Dropbox..."
+	printInfo "Downloading Dropbox..."
 
 	if [ $(uname -m) == 'x86_64' ]; then
 		ARCH=x86_64
@@ -66,13 +31,14 @@ function downloadDropbox {
 }
 
 function downloadDropboxCLI {
-	infoMsg "Downloading Dropbox CLI..."
+	printInfo "Downloading Dropbox CLI..."
 
+	mkdir -p $HOME/.dropbox-bin
 	wget -O $HOME/.dropbox-bin/dropbox "https://www.dropbox.com/download?dl=packages/dropbox.py" --no-check-certificate
 }
 
 function installDropbox {
-	infoMsg "Installing Dropbox..."
+	printInfo "Installing Dropbox..."
 
 	cat > $HOME/.dropbox-bin/dropboxd <<-'EOF'
 	#!/bin/sh
@@ -85,17 +51,15 @@ function installDropbox {
 	# Prevents autostart modification (buggy)
 	sed -i '/def reroll_autostart(/a\ \ \ \ return' $HOME/.dropbox-bin/dropbox
 
-	infoMsg "Adding to path (maybe a restart is required)..."
+	printInfo "Adding to path (maybe a restart is required)..."
 
 	chmod +x $HOME/.dropbox-bin/*
 	echo 'PATH="$HOME/.dropbox-bin:$PATH"' >> $HOME/.profile
 }
 
 function installIcons {
-	if promptMsg "Do you want to install the custom icons?"; then
-		mkdir -p $HOME/.local/share/icons/hicolor
-		cp -rT $SCRIPTDIR/icons $HOME/.local/share/icons/hicolor
-	fi
+	mkdir -p $HOME/.local/share/icons/hicolor
+	cp -rT $SCRIPTDIR/icons $HOME/.local/share/icons/hicolor
 }
 
 function createLaunchers {
@@ -112,30 +76,44 @@ function createLaunchers {
 	StartupNotify=false
 	EOF
 
-	infoMsg "Creating menu launcher..."
+	printInfo "Creating menu launcher..."
 	mkdir -p $HOME/.local/share/applications
 	cp $SCRIPTDIR/dropbox.desktop $HOME/.local/share/applications/
 
-	infoMsg "Creating autostart launcher..."
+	printInfo "Creating autostart launcher..."
 	mkdir -p $HOME/.config/autostart
 	cp $SCRIPTDIR/dropbox.desktop $HOME/.config/autostart/
 }
 
 function runDropbox {
-	if promptMsg "Run Dropbox now?"; then
-		XDG_CURRENT_DESKTOP=Unity $HOME/.dropbox-dist/dropboxd &
-	fi
+	$HOME/.dropbox-bin/dropbox start -i
 }
 
 # Process:
 ##############################
 
-prerequisites
-downloadDropbox
-downloadDropboxCLI
-installDropbox
-installIcons
-createLaunchers
-runDropbox
+if promptMsg "Do you want to install Dropbox?"; then
+	if [ -d $HOME/.dropbox ] || [ -d $HOME/.dropbox-bin ] || [ -d $HOME/.dropbox-dist ]; then
+		printWarn "This script has found a previous Dropbox installation."
 
-infoMsg "Operation complete!"
+		source $SCRIPTDIR/uninstall.sh
+	fi
+
+	downloadDropbox
+	downloadDropboxCLI
+	installDropbox
+
+	if promptMsg "Do you want to install the custom icons?"; then
+		installIcons
+	fi
+
+	createLaunchers
+
+	if promptMsg "Run Dropbox now?"; then
+		runDropbox
+	fi
+
+	printInfo "Installation complete!"
+else
+	printError "Installation aborted!"
+fi
