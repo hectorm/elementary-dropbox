@@ -63,36 +63,12 @@ function downloadDropbox {
 function createAutostart {
     infoMsg "Creating autostart launcher..."
     mkdir -p $HOME/.config/autostart
-    cat > $HOME/.config/autostart/dropbox.desktop <<EOF
-[Desktop Entry]
-Name=Dropbox
-GenericName=File Synchronizer
-Comment=Sync your files across computers and to the web
-Terminal=false
-Type=Application
-Icon=dropbox
-Categories=Network;FileTransfer;
-StartupNotify=false
-X-GNOME-Autostart-enabled=true
-Exec=env XDG_CURRENT_DESKTOP=Unity $HOME/.dropbox-dist/dropboxd
-EOF
+    cp -i dropbox.desktop $HOME/.config/autostart/ 
 }
 
 function createDesktopfile {
     infoMsg "Creating desktop file..."
-    cat > /usr/share/applications/dropbox.desktop <<EOF
-[Desktop Entry]
-Name=Dropbox
-GenericName=File Synchronizer
-Comment=Sync your files across computers and to the web
-Terminal=false
-Type=Application
-Icon=dropbox
-Categories=Network;FileTransfer;
-StartupNotify=false
-X-GNOME-Autostart-enabled=true
-Exec=env XDG_CURRENT_DESKTOP=Unity $HOME/.dropbox-dist/dropboxd
-EOF
+    cp -i   dropbox.desktop $HOME/.local/share/applications/
 }
 
 function installIcons {

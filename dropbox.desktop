@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Dropbox
+GenericName=File Synchronizer
+Comment=Sync your files across computers and to the web
+Terminal=false
+Type=Application
+Icon=dropbox
+Categories=Network;FileTransfer;
+StartupNotify=false
+X-GNOME-Autostart-enabled=true
+Exec=env XDG_CURRENT_DESKTOP=Unity $HOME/.dropbox-dist/dropboxd
