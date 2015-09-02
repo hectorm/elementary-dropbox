@@ -41,7 +41,7 @@ function downloadDropboxCLI {
 	printInfo "Downloading Dropbox CLI..."
 
 	mkdir -p $HOME/.dropbox-bin
-	wget -O $HOME/.dropbox-bin/dropbox "https://www.dropbox.com/download?dl=packages/dropbox.py" --no-check-certificate
+	wget -qO $HOME/.dropbox-bin/dropbox "https://www.dropbox.com/download?dl=packages/dropbox.py" --no-check-certificate
 }
 
 function installDropbox {
