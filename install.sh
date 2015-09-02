@@ -16,10 +16,12 @@ SCRIPTDIR=$(dirname $0)
 source $SCRIPTDIR/common.sh
 
 # Flags:
+# -y 	assume yes on all prompts
 for flag in "$@"
 do
 	FLAGS="$FLAGS$flag"
 done
+
 # Actions:
 ##############################
 

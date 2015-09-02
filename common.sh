@@ -17,6 +17,8 @@ printError () {
 }
 
 promptMsg () {
+	[ `echo $FLAGS | grep y` ] && return 0
+
 	echo -en "\e[0;33m + \e[1;32m$1 \e[0m"
 	read -p "[y/N]: " USER_RESPONSE
 
