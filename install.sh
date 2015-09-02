@@ -15,6 +15,11 @@ SCRIPTDIR=$(dirname $0)
 # Load common methods:
 source $SCRIPTDIR/common.sh
 
+# Flags:
+for flag in "$@"
+do
+	FLAGS="$FLAGS$flag"
+done
 # Actions:
 ##############################
 
