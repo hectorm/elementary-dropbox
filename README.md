@@ -15,6 +15,9 @@ You need to install git and uninstall any previous version of Dropbox on your sy
 	git clone https://github.com/zant95/elementary-dropbox /tmp/elementary-dropbox
 	bash /tmp/elementary-dropbox/uninstall.sh
 
+#### Command line options
+	-y #assume yes on all prompts
+
 ## Dropbox updates
 This script itself doesn't handle updates. Dropbox will auto-update when a new version is available.
 

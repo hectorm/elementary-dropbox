@@ -15,6 +15,13 @@ SCRIPTDIR=$(dirname $0)
 # Load common methods:
 source $SCRIPTDIR/common.sh
 
+# Flags:
+# -y 	assume yes on all prompts
+for flag in "$@"
+do
+	FLAGS="$FLAGS$flag"
+done
+
 # Actions:
 ##############################
 
@@ -34,7 +41,7 @@ function downloadDropboxCLI {
 	printInfo "Downloading Dropbox CLI..."
 
 	mkdir -p $HOME/.dropbox-bin
-	wget -O $HOME/.dropbox-bin/dropbox "https://www.dropbox.com/download?dl=packages/dropbox.py" --no-check-certificate
+	wget -qO $HOME/.dropbox-bin/dropbox "https://www.dropbox.com/download?dl=packages/dropbox.py" --no-check-certificate
 }
 
 function installDropbox {
