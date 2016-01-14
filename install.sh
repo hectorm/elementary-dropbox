@@ -34,14 +34,14 @@ function downloadDropbox {
 		ARCH=x86
 	fi
 
-	wget -O - "https://www.dropbox.com/download?plat=lnx.$ARCH" --no-check-certificate | tar xzf - -C $HOME
+	wget -O - "https://www.dropbox.com/download?plat=lnx.$ARCH" | tar xzf - -C $HOME
 }
 
 function downloadDropboxCLI {
 	printInfo "Downloading Dropbox CLI..."
 
 	mkdir -p $HOME/.dropbox-bin
-	wget -qO $HOME/.dropbox-bin/dropbox "https://www.dropbox.com/download?dl=packages/dropbox.py" --no-check-certificate
+	wget -qO $HOME/.dropbox-bin/dropbox "https://www.dropbox.com/download?dl=packages/dropbox.py"
 }
 
 function installDropbox {
