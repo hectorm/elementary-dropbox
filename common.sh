@@ -1,30 +1,47 @@
-#!/bin/bash
+#!/bin/sh
 
-# Messages:
-##############################
+# Author:     Héctor Molinero Fernández <hector@molinero.xyz>
+# Repository: https://github.com/zant95/elementary-dropbox
+# License:    MIT, https://opensource.org/licenses/MIT
 
-printInfo () {
-	echo -e "\e[0;33m + \e[1;32m$1 \e[0m"
+# Exit on errors
+set -eu
+
+assume='ask'
+
+while getopts 'yn' opt; do
+	case "$opt" in
+		y) assume='yes' ;;
+		n) assume='no' ;;
+		*) exit 1 ;;
+	esac
+done
+
+infoMsg() {
+	printf -- '\033[1;33m + \033[1;32m%s \033[0m\n' "$@"
 }
 
-printWarn () {
-	echo -e "\e[0;33m + \e[1;33m$1 \e[0m"
+warnMsg() {
+	printf -- '\033[1;33m + \033[1;33m%s \033[0m\n' "$@"
 }
 
-printError () {
-	echo -e "\e[0;33m + \e[1;31mError: $1 \e[0m"
-	exit 1
+errorMsg() {
+	printf -- '\033[1;33m + \033[1;31m%s \033[0m\n' "$@"
 }
 
-promptMsg () {
-	[ `echo $FLAGS | grep y` ] && return 0
-
-	echo -en "\e[0;33m + \e[1;32m$1 \e[0m"
-	read -p "[y/N]: " USER_RESPONSE
-
-	if [[ $USER_RESPONSE =~ ^[Yy]$ ]]; then
+promptMsg() {
+	printf -- '\033[1;33m + \033[1;33m%s \033[0m[y/N]: ' "$@"
+	if [ "$assume" = 'yes' ]; then
+		printf -- '%s\n' 'y'
 		return 0
-	else
+	elif [ "$assume" = 'no' ]; then
+		printf -- '%s\n' 'n'
 		return 1
+	else
+		read answer
+		case "$answer" in
+			[yY]|[yY][eE][sS]) return 0 ;;
+			*) return 1 ;;
+		esac
 	fi
 }
