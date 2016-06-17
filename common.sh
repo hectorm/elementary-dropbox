@@ -45,3 +45,15 @@ promptMsg() {
 		esac
 	fi
 }
+
+isReleaseCodename() {
+	if [ "X$(lsb_release -cs)" == "X$1" ]; then
+		return 0
+	fi
+
+	return 1
+}
+
+isPkgInstalled() {
+	dpkg -s "$1" &>/dev/null
+}

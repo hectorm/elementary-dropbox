@@ -111,6 +111,14 @@ if promptMsg 'Do you want to install the custom icons?'; then
 	installIcons
 fi
 
+if isReleaseCodename 'loki'; then
+	warnMsg 'Elementary OS Loki detected.'
+
+	if promptMsg 'Do you want to enable experimental support?'; then
+		bash "$scriptDir"/loki_support.sh
+	fi
+fi
+
 if promptMsg 'Run Dropbox now?'; then
 	runDropbox
 fi
