@@ -47,7 +47,11 @@ function configureDropbox {
 	sed -i '/def reroll_autostart(/a\ \ \ \ return' "$HOME"/.dropbox-bin/dropbox
 
 	infoMsg 'Adding to path (maybe a restart is required)...'
-	sed -i '$s|$|\nPATH="$HOME/.dropbox-bin:$PATH"|' "$HOME"/.profile
+	if [ -s "$HOME"/.profile ]; then
+		sed -i '$s|$|\nPATH="$HOME/.dropbox-bin:$PATH"|' "$HOME"/.profile
+	else
+		echo 'PATH="$HOME/.dropbox-bin:$PATH"' > $HOME/.profile
+	fi
 
 	chmod +x "$HOME"/.dropbox-bin/*
 }

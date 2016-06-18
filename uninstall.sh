@@ -19,7 +19,9 @@ if [ "$(pidof dropbox)" ]; then
 	killall dropbox
 fi
 
-sed -i '\|PATH="$HOME/.dropbox-bin:$PATH"|d' "$HOME"/.profile
+if [ -f "$HOME"/.profile ]; then
+	sed -i '\|PATH="$HOME/.dropbox-bin:$PATH"|d' "$HOME"/.profile
+fi
 
 rm -rf \
 	"$HOME"/.dropbox-bin \
