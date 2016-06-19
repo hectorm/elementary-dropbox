@@ -50,7 +50,7 @@ function configureDropbox {
 	if [ -s "$HOME"/.profile ]; then
 		sed -i '$s|$|\nPATH="$HOME/.dropbox-bin:$PATH"|' "$HOME"/.profile
 	else
-		echo 'PATH="$HOME/.dropbox-bin:$PATH"' > $HOME/.profile
+		echo 'PATH="$HOME/.dropbox-bin:$PATH"' > "$HOME"/.profile
 	fi
 
 	chmod +x "$HOME"/.dropbox-bin/*
