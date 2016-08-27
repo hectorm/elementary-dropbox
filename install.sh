@@ -37,7 +37,7 @@ function configureDropbox {
 
 	cat > "$HOME"/.dropbox-bin/dropboxd <<-'EOF'
 	#!/bin/sh
-	env XDG_CURRENT_DESKTOP=Unity "$HOME"/.dropbox-dist/dropboxd "$@"
+	env XDG_CURRENT_DESKTOP=Unity QT_STYLE_OVERRIDE="" "$HOME"/.dropbox-dist/dropboxd "$@"
 	EOF
 
 	# Replace daemon location
