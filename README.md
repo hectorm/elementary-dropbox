@@ -1,5 +1,5 @@
 # Dropbox for Elementary OS
-This script, designed for **Elementary OS Freya**, installs the latest version of Dropbox and integrates it with WingPanel.
+This script, designed for **Elementary OS**, installs the latest version of Dropbox and integrates it with WingPanel.
 
 ![System tray icon preview](http://i.imgur.com/hw3iHKK.png)
 
@@ -23,5 +23,5 @@ You need to install git and uninstall any previous version of Dropbox on your sy
 This script itself doesn't handle updates. Dropbox will auto-update when a new version is available.
 
 ## Credits
-* Taskbar icons: [ubuntu-themes](https://launchpad.net/ubuntu-themes)
-* Launcher icons: [official Dropbox installer](https://linux.dropbox.com/packages)
+* Panel icons: [paper-icon-theme](https://github.com/snwh/paper-icon-theme) ([license](https://raw.githubusercontent.com/snwh/paper-icon-theme/bbb30a7033904b64a0d410dd4081243a5262e461/LICENSE_CCBYSA)).
+* Launcher icon: [nautilus-dropbox](https://github.com/dropbox/nautilus-dropbox) ([license](https://raw.githubusercontent.com/dropbox/nautilus-dropbox/48c2d695ab52f36ab1895ce42beacf458aa2700b/COPYING)).

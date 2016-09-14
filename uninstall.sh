@@ -29,7 +29,7 @@ rm -rf \
 	"$HOME"/.local/share/applications/dropbox.desktop \
 	"$HOME"/.config/autostart/dropbox.desktop \
 	"$HOME"/.local/share/icons/hicolor/*x*/apps/dropbox.* \
-	"$HOME"/.local/share/icons/hicolor/*x*/apps/dropboxstatus-{busy,busy2,idle,logo,x}.*
+	"$HOME"/.local/share/icons/hicolor/*x*/apps/dropboxstatus-{blank,busy,busy2,idle,logo,x}.*
 
 if [ -d "$HOME"/.dropbox ]; then
 	mv "$HOME"/.dropbox "$HOME"/.dropbox.$(date +%s).bak
