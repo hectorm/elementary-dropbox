@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-<svg id="svg3833" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="22" width="22" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/">
- <metadata id="metadata13">
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-    <dc:format>image/svg+xml</dc:format>
-    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:title/>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <path id="path3973" style="opacity:.3;color:#000000" d="m6.5 4.5-4.5 3.5 4.5 3-4.5 4 9 6 9-6-4.5-4 4.5-3-4.5-3.5-4.5 3.5-4.5-3.5z"/>
- <path id="path3967" style="color:#000000;fill:#ffffff" d="m6.5 3.5-4.5 3.5 4.5 3-4.5 4 9 6 9-6-4.5-4 4.5-3-4.5-3.5-4.5 3.5-4.5-3.5z"/>
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg4151" viewBox="0 0 22 22" height="22" width="22">
+	<defs id="defs4153" />
+	<metadata id="metadata4156">
+		<rdf:RDF>
+			<cc:Work rdf:about="">
+				<dc:format>image/svg+xml</dc:format>
+				<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+				<dc:title></dc:title>
+			</cc:Work>
+		</rdf:RDF>
+	</metadata>
+	<g style="display:inline" id="layer4">
+		<path style="display:inline;opacity:1;fill:#ffffff;stroke-width:1" d="M 7.3443226,3.3618677 2.4622469,6.5254717 5.8601713,9.2594265 10.742246,6.2130121 7.3443226,3.3618677 Z M 2.4622469,11.915272 7.3443226,15.117904 10.742246,12.266786 5.8601713,9.2594265 2.4622469,11.915272 Z m 8.2799991,0.351514 3.436981,2.851118 4.84302,-3.163578 -3.358868,-2.6948995 -4.921133,3.0073595 z m 8.280001,-5.7413143 -4.84302,-3.163604 -3.436981,2.8511444 4.921133,3.0464144 3.358868,-2.7339548 z m -8.240945,6.3662163 -3.4369794,2.851135 -1.4450944,-0.976424 0,1.093577 4.8820738,2.929252 4.882077,-2.929252 0,-1.093577 -1.484151,0.976424 -3.397926,-2.851135 z" id="path7007" />
+	</g>
 </svg>

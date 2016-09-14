@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-<svg id="svg4744" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="24" width="24" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
- <metadata id="metadata18">
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-    <dc:format>image/svg+xml</dc:format>
-    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:title/>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <path id="path3973" d="m7.5 5.5-4.5 3.5 4.5 3-4.5 4 9 6 9-6-4.5-4 4.5-3-4.5-3.5-4.5 3.5-4.5-3.5zm4.5 4.5c0.554 0 1 0.446 1 1v5c0 0.554-0.446 1-1 1s-1-0.446-1-1v-5c0-0.554 0.446-1 1-1zm-0.25 8h0.5c0.4155 0 0.75 0.3345 0.75 0.75v0.5c0 0.416-0.334 0.75-0.75 0.75h-0.5c-0.416 0-0.75-0.334-0.75-0.75v-0.5c0-0.416 0.334-0.75 0.75-0.75z" style="opacity:.3;color:#000000"/>
- <path id="path3967" d="m7.5 4.5-4.5 3.5l4.5 3-4.5 4 9 6 9-6-4.5-4 4.5-3-4.5-3.5-4.5 3.5-4.5-3.5zm4.5 4.5c0.554 0 1 0.446 1 1v5c0 0.554-0.446 1-1 1s-1-0.446-1-1v-5c0-0.554 0.446-1 1-1zm-0.25 8h0.5c0.4155 0 0.75 0.3345 0.75 0.75v0.5c0 0.416-0.334 0.75-0.75 0.75h-0.5c-0.416 0-0.75-0.334-0.75-0.75v-0.5c0-0.416 0.334-0.75 0.75-0.75z" style="color:#000000;fill:#df382c"/>
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" id="svg4151" viewBox="0 0 24 24" height="24" width="24" inkscape:version="0.91+devel+osxmenu r12922" sodipodi:docname="dropboxstatus-x.svg">
+  <defs id="defs4153" />
+	<metadata id="metadata4156">
+		<rdf:RDF>
+			<cc:Work rdf:about="">
+				<dc:format>image/svg+xml</dc:format>
+				<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+				<dc:title></dc:title>
+			</cc:Work>
+		</rdf:RDF>
+	</metadata>
+	<g transform="translate(0,-290.64999)" id="g7009" style="display:inline">
+		<path style="fill:#ffffff;stroke-width:1" d="M 8.3066406,3.6152344 3,7.0546875 6.6933594,10.025391 12,6.7148438 8.3066406,3.6152344 Z M 12,6.7148438 16.181641,9.3027344 a 5.5558386,5.5558386 0 0 1 0.52539,-0.029297 5.5558386,5.5558386 0 0 1 1.353516,0.1738281 L 21,7.0546875 15.736328,3.6152344 12,6.7148438 Z M 6.6933594,10.025391 3,12.912109 8.3066406,16.394531 11.228516,13.941406 a 5.5558386,5.5558386 0 0 1 0.248046,-0.96875 L 6.6933594,10.025391 Z m 4.4628906,4.683593 -2.8496094,2.363282 -1.5703125,-1.060547 0,1.189453 5.3066409,3.183594 1.572265,-0.94336 a 5.5558386,5.5558386 0 0 1 -2.464843,-4.613281 5.5558386,5.5558386 0 0 1 0.0059,-0.119141 z" transform="translate(0,290.64999)" id="path7011" />
+		<path id="path7013" transform="translate(0,290.64999)" d="m 16.707031,9.7773438 c -2.789474,-1.05e-5 -5.050791,2.2613072 -5.050781,5.0507812 -10e-6,2.789474 2.261307,5.050791 5.050781,5.050781 2.789474,10e-6 5.050791,-2.261307 5.050781,-5.050781 10e-6,-2.789474 -2.261307,-5.0507917 -5.050781,-5.0507812 z m -0.570312,2.5449222 1.140625,0 c 0.06171,0 0.114302,0.02323 0.158203,0.06836 0.04391,0.04513 0.06487,0.0985 0.0625,0.160156 l -0.09961,2.732422 c -0.0024,0.06173 -0.02797,0.11509 -0.07422,0.160156 -0.04627,0.04507 -0.100402,0.06836 -0.16211,0.06836 l -0.910156,0 c -0.06171,0 -0.115834,-0.02329 -0.162109,-0.06836 -0.04627,-0.04513 -0.07184,-0.09849 -0.07422,-0.160156 l -0.09961,-2.732422 c -0.0024,-0.06173 0.01857,-0.115103 0.0625,-0.160156 0.04391,-0.04513 0.0965,-0.06836 0.158203,-0.06836 z m 0.115234,3.759765 0.910156,0 c 0.0617,0 0.115062,0.02134 0.160157,0.06641 0.04509,0.04513 0.06836,0.0985 0.06836,0.160156 l 0,0.798828 c 0,0.06173 -0.02327,0.115089 -0.06836,0.160156 -0.04509,0.04507 -0.09845,0.06641 -0.160157,0.06641 l -0.910156,0 c -0.0617,0 -0.115061,-0.02134 -0.160156,-0.06641 -0.04509,-0.04513 -0.06836,-0.09849 -0.06836,-0.160156 l 0,-0.798828 c 0,-0.06173 0.02327,-0.115096 0.06836,-0.160156 0.04509,-0.04507 0.09846,-0.06641 0.160156,-0.06641 z" style="fill:#d40000;stroke:none;stroke-width:1.00157475;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+	</g>
 </svg>

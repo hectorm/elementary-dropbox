@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-<svg id="svg3833" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="24" width="24" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
- <metadata id="metadata13">
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-    <dc:format>image/svg+xml</dc:format>
-    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:title/>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <path id="path3973" style="opacity:.3;color:#000000" d="m7.5 5.5-4.5 3.5 4.5 3-4.5 4 9 6 9-6-4.5-4 4.5-3-4.5-3.5-4.5 3.5-4.5-3.5z"/>
- <path id="path3967" style="color:#000000;fill:#ffffff" d="m7.5 4.5-4.5 3.5 4.5 3-4.5 4 9 6 9-6-4.5-4 4.5-3-4.5-3.5-4.5 3.5-4.5-3.5z"/>
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg4151" viewBox="0 0 24 24" height="24" width="24">
+	<defs id="defs4153" />
+	<metadata id="metadata4156">
+		<rdf:RDF>
+			<cc:Work rdf:about="">
+				<dc:format>image/svg+xml</dc:format>
+				<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+				<dc:title></dc:title>
+			</cc:Work>
+		</rdf:RDF>
+	</metadata>
+	<g id="g7005" transform="translate(0,-290.64999)" style="display:inline;opacity:1">
+		<path style="fill:#ffffff;stroke-width:1" d="M 8.306604,294.26555 3,297.70425 6.6933961,300.67594 12,297.36462 8.306604,294.26555 Z M 3,303.56273 8.306604,307.04385 12,303.94481 6.6933961,300.67594 3,303.56273 Z m 9,0.38208 3.735849,3.09904 L 21,303.60518 17.349057,300.67594 12,303.94481 Z m 9,-6.24056 -5.264151,-3.4387 L 12,297.36462 17.349057,300.67594 21,297.70425 Z m -8.957548,6.9198 -3.735848,3.09906 -1.5707548,-1.06133 0,1.18867 5.3066028,3.18397 5.306605,-3.18397 0,-1.18867 -1.613208,1.06133 -3.693397,-3.09906 z" id="path7007" />
+	</g>
 </svg>
